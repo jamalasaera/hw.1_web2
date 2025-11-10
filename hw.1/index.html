@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kilometers → Miles Converter</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>Kilometers → Miles Converter</h1>
+    <p class="subtitle">Enter a distance in kilometers and convert it to miles.</p>
+
+    <form id="converter-form" novalidate>
+      <div class="field">
+        <label for="kilometers">Kilometers</label>
+        <input
+          id="kilometers"
+          name="kilometers"
+          type="number"
+          inputmode="decimal"
+          step="any"
+          min="0"
+          placeholder="e.g., 5.2"
+          required 
+          aria-describedby="km-help km-error"
+        />
+        <small id="km-help" class="help">Use a non-negative number. Decimals are OK.</small>
+        <div id="km-error" class="error" role="alert" aria-live="assertive"></div>
+      </div>
+
+      <div class="actions">
+        <button type="submit" class="btn primary">Convert to Miles</button>
+        <button type="button" id="clear-btn" class="btn">Clear</button>
+      </div>
+    </form>
+
+    <section class="result" aria-live="polite" aria-atomic="true">
+      <h2>Result</h2>
+      <output id="result" for="kilometers">—</output>
+    </section>
+
+    <footer class="footer">
+      <small>Formula: <code>miles = kilometers × 0.621371</code></small>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
